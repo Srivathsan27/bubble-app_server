@@ -47,6 +47,7 @@ const main = async () => {
     synchronize: prod ? false : true,
     migrations: [path.join(__dirname, "./migrations/*")],
     entities: [User, Post, Hit, Comment, UserProfile, Tag],
+    ssl: true,
   };
 
   const connection = await createConnection(
