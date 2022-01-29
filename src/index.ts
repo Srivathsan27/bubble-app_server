@@ -62,7 +62,7 @@ const main = async () => {
     cors({
       // allowedHeaders: "*",
       credentials: true,
-      origin: "*",
+      origin: process.env.CLIENT_URL,
     })
   );
 
