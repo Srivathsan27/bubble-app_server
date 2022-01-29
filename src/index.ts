@@ -62,8 +62,7 @@ const main = async () => {
     cors({
       // allowedHeaders: "*",
       credentials: true,
-      origin:
-        "https://bubble-social-media-app-2dkx9uzhq-srivathsan27.vercel.app",
+      origin: "https://bubble-social-media-app.vercel.app/",
     })
   );
 
