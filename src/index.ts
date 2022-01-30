@@ -82,6 +82,7 @@ const main = async () => {
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 365 * 1,
         sameSite: process.env.SAME_SITE as "lax" | "none" | "strict",
+        domain: "herokuapp.com",
       },
     })
   );
