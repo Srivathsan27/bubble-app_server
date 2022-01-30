@@ -82,7 +82,7 @@ const main = async () => {
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 365 * 1,
         sameSite: "none",
-        domain: "herokuapp.com",
+        domain: ".herokuapp.com",
       },
     })
   );
