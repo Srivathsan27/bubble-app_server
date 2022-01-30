@@ -34,6 +34,7 @@ import { UserProfile } from "../entities/UserProfile";
 import { ProfileResponse } from "../ObjectTypes/ProfileResponse";
 import { ProfileInput } from "../InputTypes/ProfileInput";
 import { TaggedResponse, TaggedUser } from "../ObjectTypes/TaggedResponse";
+import { setCookie } from "../utils/setCookie";
 
 @Resolver(() => User)
 export class UserResolver {
@@ -71,8 +72,8 @@ export class UserResolver {
       await UserProfile.create({
         userId: user.id,
       }).save();
-      req.session.userId = user.id;
-      req.session.cookie = new Cookie();
+
+      setCookie(req, user.id);
 
       return {
         user,
@@ -129,8 +130,7 @@ export class UserResolver {
       };
     }
 
-    req.session.userId = user.id;
-    req.session.cookie = new Cookie();
+    setCookie(req, user.id);
 
     return {
       user,
